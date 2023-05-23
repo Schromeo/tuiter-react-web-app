@@ -2,45 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"/>
     <title>Home</title>
 </head>
 <body>
 
-<table>
-  <tr>
-    <td style="vertical-align: top;">
-<!--      <h2>Global Navigation</h2>-->
-      <ul>
-        <li><a href="account.html">Account</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li style="background-color: blue"><a style="color : white" href="courses.html"><b>Courses</b></a></li>
-        <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="messages.html">Messages</a></li>
-        <li><a href="setting.html">Setting</a></li>
-        <li><a href="help.html">Help</a></li>
-      </ul>
-    </td>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="d-none d-md-block col-xl-1 col-2">
+            <!--      <h2>Global Navigation</h2>-->
+            <ul class="list-group">
+                <li class="list-group-item"><a class="nav-link" href="account.html">Account</a></li>
+                <li class="list-group-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                <li class="list-group-item active"><a class="nav-link" href="courses.html"><b>Courses</b></a></li>
+                <li class="list-group-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+                <li class="list-group-item"><a class="nav-link" href="messages.html">Messages</a></li>
+                <li class="list-group-item"><a class="nav-link" href="setting.html">Setting</a></li>
+                <li class="list-group-item"><a class="nav-link" href="help.html">Help</a></li>
+            </ul>
+            </div>
+            <!--      <h2>Course Navigation</h2>-->
+            <div class="col-xl-1 col-2 d-md-block d-none">
+                <div class="list-group">
+                    <a class="list-group-item nav-link active" href="index.html"><b>Home</b></a>
+                    <a class="list-group-item nav-link" href="modules.html">Modules</a>
+                    <a class="list-group-item nav-link" href="syllabus.html">Syllabus</a>
+                    <a class="list-group-item nav-link" href="assignments.html">Assignments</a>
+                    <a class="list-group-item nav-link" href="quizzes.html">Quizzes</a>
+                    <a class="list-group-item nav-link" href="pages.html">Pages</a>
+                    <a class="list-group-item nav-link" href="files.html">Files</a>
+                    <a class="list-group-item nav-link" href="piazza.html">Piazza</a>
+                </div>
+            </div>
 
-    <td>
-<!--      <h2>Course Navigation</h2>-->
-      <ul>
-        <li style="background-color: blue"><a style="color : white" href="index.html"><b>Home</b></a></li>
-        <li><a href="modules.html">Modules</a></li>
-        <li><a href="syllabus.html">Syllabus</a></li>
-        <li><a href="assignments.html">Assignments</a></li>
-        <li><a href="quizzes.html">Quizzes</a></li>
-        <li><a href="pages.html">Pages</a></li>
-        <li><a href="files.html">Files</a></li>
-        <li><a href="piazza.html">Piazza</a></li>
-      </ul>
-    </td>
+            <div class="col">
+                <div class="list-group">
+                    <a class="list-group-item active" href="#"><b>Week1 - Intro to HTML</b>
+                        <span class="float-end d-xxl-block d-none d-xl-none d-md-none d-sm-none">XXL</span>
+                        <span class="float-end d-xl-block d-none d-xxl-none d-md-none d-sm-none">XL</span>
+                        <span class="float-end d-md-block d-none d-xxl-none d-xl-none d-sm-none">MD</span>
+                        <span class="float-end d-sm-block d-none d-xxl-none d-xl-none d-md-none">SM</span>
+                    </a>
+                    <a class="list-group-item" href="#"><b>What is HTML?</b></a>
+                    <a class="list-group-item" href="#">HTML Tags</a>
+                    <a class="list-group-item" href="#">HTML Attributes</a>
+                </div>
 
-    <td style = "vertical-align: top">
-      <h2>Home</h2>
+                <div class="list-group mt-3">
+                    <a class="list-group-item active" href="#"><b>Week2 - Intro to CSS</b></a>
+                    <a class="list-group-item" href="#"><b>What is CSS?</b></a>
+                    <a class="list-group-item" href="#">CSS selector</a>
+                    <a class="list-group-item" href="#">CSS Properties</a>
+                </div>
 
-    </td>
-  </tr>
+                <div class="list-group mt-3">
+                    <a class="list-group-item active" href="#"><b>Week3 - Intro to JavaScript</b></a>
+                    <a class="list-group-item" href="#"><b>What is JS?</b></a>
+                    <a class="list-group-item" href="#">JavaScript Variables</a>
+                    <a class="list-group-item" href="#">JavaScript Functions</a>
+                </div>
+            </div>
+            <div class="col-2 d-none d-lg-block">
 
-</table>
+                <div class="list-group">
+                    <a class="list-group-item nav-link active" href="index.html"><b>Home</b></a>
+                    <a class="list-group-item nav-link" href="modules.html">Modules</a>
+                    <a class="list-group-item nav-link" href="syllabus.html">Syllabus</a>
+                    <a class="list-group-item nav-link" href="assignments.html">Assignments</a>
+                    <a class="list-group-item nav-link" href="quizzes.html">Quizzes</a>
+                    <a class="list-group-item nav-link" href="pages.html">Pages</a>
+                    <a class="list-group-item nav-link" href="files.html">Files</a>
+                    <a class="list-group-item nav-link" href="piazza.html">Piazza</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
