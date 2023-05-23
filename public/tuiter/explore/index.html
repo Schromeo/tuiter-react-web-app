@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Explore (CSS)</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <!-- Left Column -->
+    <div class="col-lg-3">
+      <ul class="list-group">
+        <li class="list-group-item active">Explore</li>
+        <!-- Add other navigation links here -->
+      </ul>
+      <button class="btn btn-primary mt-3 btn-block">Tuit</button>
+    </div>
+
+    <!-- Center Column -->
+    <div class="col-lg-6">
+      <div class="input-group mt-3">
+        <input type="text" class="form-control" placeholder="Search Tuiter">
+        <div class="input-group-append">
+          <span class="input-group-text"><i class="fas fa-search"></i></span>
+        </div>
+      </div>
+
+      <ul class="nav nav-tabs mt-3">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">For You</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Trending</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sports</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Entertainment</a>
+        </li>
+      </ul>
+
+      <div class="wd-image-container mt-3">
+        <img src="crown.jpg" alt="Image">
+        <h1 class="wd-overlay-text">The Coronation of King Charles III</h1>
+      </div>
+
+      <ul class="list-group mt-3">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm-8">
+              <span class="wd-tuit-trending-info">Trending in News</span><br>
+              <span class="wd-tuit-username">Meghan</span><br>
+              <span class="wd-tuit-amount">56.1K Tuits</span>
+            </div>
+            <div class="col-sm-4 text-right">
+              <button class="btn btn-link wd-tuit-more-button"><i class="fas fa-ellipsis-h"></i></button>
+            </div>
+          </div>
+        </li>
+        <!-- Add other tuits here -->
+      </ul>
+    </div>
+
+    <!-- Right Column -->
+    <div class="col-lg-3">
+      <ul class="list-group">
+        <li class="list-group-item active">Who to follow</li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-2">
+              <img src="profile1.jpg" alt="Profile" class="rounded-circle" width="48" height="48">
+            </div>
+            <div class="col-7">
+              <p class="mb-0">User 1</p>
+              <p>Followers: 100K</p>
+            </div>
+            <div class="col-3">
+              <button class="btn btn-primary btn-sm btn-pill">Follow</button>
+            </div>
+          </div>
+        </li>
+        <!-- Add other follow suggestions here -->
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

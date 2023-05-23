@@ -1,0 +1,159 @@
+/*
+    Search Bar, Search Bar Input General, Search Bar Logo, Search Bar Gear Icon
+*/
+.wd-search-bar{
+    position: relative;
+    padding-left: 3%;
+    padding-top:25px;
+}
+.wd-search-bar input[type="text"]{
+    width: 78%;
+    height: 20px;
+    background-color: #f0f3f4;
+    border: 10px solid #f0f3f4;
+    border-radius: 50px;
+    padding-left: 50px;
+    background-image:url("search-glass.png");
+    background-repeat: no-repeat;
+    background-position:15px center;
+    background-size: 20px 20px;
+    color: darkgrey;
+    font-size: 17px;
+}
+
+.wd-search-bar input[type="text"]::placeholder{
+    font-size: 17px;
+    font-style: italic;
+    font-color: darkgrey;
+}
+
+.wd-search-bar i.fa-cog{
+    position: relative;
+    top: 1px;
+    left: 20px;
+    font-size:20px;
+}
+/* Search Bar Ends*/
+
+/*
+    Tab
+*/
+.wd-tabs {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding-left:5%;
+  width: 90%;
+
+}
+
+.wd-tabs li {
+  margin-right: 7%;
+  margin-left:5px;
+}
+
+.wd-tabs a {
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  white-space:nowrap;
+  color: darkgrey;
+}
+
+.wd-tabs a::before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 16px);
+  height: 3px;
+  bottom: -5px;
+  left: 8px;
+  background-color: transparent;
+}
+
+.wd-tabs a.selected-tab{
+  color: black;
+}
+
+.wd-tabs a.selected-tab::before {
+  background-color: lightblue;
+}
+/* Tab Ends*/
+
+/*
+    Image with Text
+*/
+.wd-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wd-image-container img{
+    max-width:100%;
+    max-height: 50%;
+}
+
+.wd-overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  background-color: none;
+  padding: 10px;
+  margin: 0;
+}
+/* Image Ends*/
+
+
+/*
+    Tuits
+*/
+
+.wd-tuit-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.wd-tuit-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.wd-tuit-text {
+  flex-grow: 1;
+}
+
+.wd-tuit-username {
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+.wd-tuit-amount {
+  color: gray;
+  font-size: 14px;
+}
+
+.wd-tuit-trending-info{
+    color: gray;
+    font-size: 14px;
+}
+
+.wd-tuit-more-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.wd-tuit-more-button i {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Tuits Ends*/
