@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+    <style>
+        img.banner {
+            height: 200px;
+            width: 100%;
+        }
+
+        img.icon {
+            width: 48px;
+            height: 48px;
+            margin-right: 10px;
+        }
+
+        hr {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+        table {
+            width: 100%;
+        }
+        td.sidebar {
+            float: left;
+            width: 210px;
+            background-color: pink;
+            margin:left;
+        }
+        td.sidebar ul{
+            margin:0;
+            padding:0;
+        }
+        td.content {
+            padding-left:20px;
+        }
+
+    </style>
+</head>
+<body>
+<a href="profile.html">Back</a>
+<table>
+    <tr>
+        <td style = "vertical-align:top;">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="edit-profile.html">Edit Profile</a></li>
+            </ul>
+        </td>
+        <td>
+            <h1>Tuiter</h1>
+            <h2>Edit Profile</h2>
+
+            <a href="profile.html">Save</a>
+            <img src="banner-image.png" class="banner" alt="Banner Image">
+            <label for="banner-upload"></label>
+            <input type="file" id="banner-upload" name="banner" accept=".jpg, .png">
+            <br>
+            <img src="icon.png" class="icon" alt="Icon Image">
+            <br>
+
+            <input type="file" id="avatar-upload" name="avatar" accept=".jpg, .png">
+            <hr>
+            <label for="name">Name</label>
+            <br>
+            <input type="text" id="name" name="name" value="WebDev" placeholder="Name">
+            <hr>
+            <label for="bio">Bio</label>
+            <br>
+            <textarea id="bio" name="bio" cols="50" rows="10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

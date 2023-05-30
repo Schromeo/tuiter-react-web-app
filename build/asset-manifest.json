@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.967c8917.css",
+    "main.js": "/static/js/main.a0718fd6.js",
+    "static/js/787.d43a8f1a.chunk.js": "/static/js/787.d43a8f1a.chunk.js",
+    "static/media/starship.jpg": "/static/media/starship.265d54a4f49a89839b7b.jpg",
+    "static/media/nasa.png": "/static/media/nasa.eb082d713363465c789c.png",
+    "index.html": "/index.html",
+    "main.967c8917.css.map": "/static/css/main.967c8917.css.map",
+    "main.a0718fd6.js.map": "/static/js/main.a0718fd6.js.map",
+    "787.d43a8f1a.chunk.js.map": "/static/js/787.d43a8f1a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.967c8917.css",
+    "static/js/main.a0718fd6.js"
+  ]
+}
