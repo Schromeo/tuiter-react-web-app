@@ -32,7 +32,7 @@ function ExploreScreen() {
         </ul>
 
         <div className="position-relative mb-2">
-            <img src="https://pbs.twimg.com/media/FmSLzTlaEAUCWCh?format=jpg&name=4096x4096" className="w-100" alt="" />
+            <img src="/images/starship.jpg" className="w-100" alt="" />
             <h1 className="position-absolute wd-nudge-up text-white">
                 SpaceX Starship
             </h1>
