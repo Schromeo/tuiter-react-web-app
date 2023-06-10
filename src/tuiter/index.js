@@ -5,7 +5,7 @@ import HomeScreen from "./home-screen/index"
 
 import ExploreScreen from "./explore-screen/index"
 import BookmarksScreen from "./bookmarks-screen"
-import ProfileScreen from "./profile-screen"
+
 import WhoToFollowListItem from "./who-to-follow-list/who-to-follow-list-item"
 import WhoToFollowList from "./who-to-follow-list/index.js"
 import TuitSummaryItem from "./tuit-summary-list/tuit-summary-item"
