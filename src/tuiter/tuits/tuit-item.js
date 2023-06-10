@@ -2,13 +2,14 @@ import React from "react";
 import {TbDiscountCheckFilled} from "react-icons/tb";
 import TuitStats from "./tuit-stats";
 import {useDispatch} from "react-redux";
-import {deleteTuit} from "../reducers/tuits-reducer"
+//import {deleteTuit} from "../reducers/tuits-reducer"
+import {deleteTuitThunk} from "../services/tuits-thunks"
 import {RxCross1} from "react-icons/rx"
 
 const TuitItem = ({tuit}) => {
 
     const dispatch = useDispatch();
-    const deleteTuitHandler = (id) => {dispatch(deleteTuit(id));}
+    const deleteTuitHandler = (id) => {dispatch(deleteTuitThunk(id));}
     return(
         <li className="list-group-item">
             <div className="row">

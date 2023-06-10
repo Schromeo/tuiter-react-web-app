@@ -4,6 +4,9 @@ import { BiMessageRounded } from "react-icons/bi"
 import { AiOutlineRetweet } from "react-icons/ai"
 import { RiHeartFill, RiHeartLine } from "react-icons/ri"
 import { FiShare } from "react-icons/fi"
+import { updateTuitThunk } from "../services/tuits-thunks";
+import { useDispatch } from "react-redux";
+const dispatch = useDispatch();
 
 const TuitStats = ({replies,retuits,likes,liked}) => {
 
@@ -18,6 +21,11 @@ const TuitStats = ({replies,retuits,likes,liked}) => {
         }
         setIsLiked(!isLiked);
     };
+//<div className="col">
+//                    {isLiked ? (<RiHeartFill color="red" onClick={() => } />) :
+//                        (<RiHeartLine onClick={handleLike} />)}
+//                    <span className="ms-2">{likesCount}</span>
+//                </div>
 
     return (
         <div>
@@ -31,8 +39,8 @@ const TuitStats = ({replies,retuits,likes,liked}) => {
                     <span className="ms-2">{retuits}</span>
                 </div>
                 <div className="col">
-                    {isLiked ? (<RiHeartFill color="red" onClick={handleLike} />) :
-                        (<RiHeartLine onClick={handleLike} />)}
+                    {isLiked ? (<RiHeartFill color="red" onClick={() => dispatch(updateTuitThunk({ ...tuit, likes: tuit.likes + 1 }))} />) :
+                        (<RiHeartLine onClick={() => dispatch(updateTuitThunk({ ...tuit, likes: tuit.likes + 1 }))} />)}
                     <span className="ms-2">{likesCount}</span>
                 </div>
                 <div className="col">
