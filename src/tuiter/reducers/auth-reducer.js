@@ -18,7 +18,7 @@ const authSlice = createSlice({
         state.currentUser = payload;
         },
         [register.fulfilled]: (state, { payload }) => {},
-        },
-    },
+    }
+
 });
 export default authSlice.reducer;
