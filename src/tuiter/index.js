@@ -16,8 +16,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import tuitsReducer from "./reducers/tuits-reducer";
 
-import ProfileScreen from "./user/profile";
-import LoginScreen from "./user/login";
+import ProfileScreen from "./user/profile-screen";
+import LoginScreen from "./user/login-screen";
 //import RegisterScreen from "./user/register";
 import authReducer from "./reducers/auth-reducer";
 
