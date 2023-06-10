@@ -14,7 +14,7 @@ const { payload } = await dispatch(profileThunk());
 setProfile(payload);
 }, []);
 return (
-    return (
+
     <div>
     <h1>Profile Screen</h1>
     {profile && (<div>
@@ -46,6 +46,6 @@ return (
     }}> Logout</button>
     <button onClick={save}>Save </button>
     </div> );
-);
+
 }
 export default ProfileScreen;
