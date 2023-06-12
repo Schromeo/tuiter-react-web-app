@@ -5,7 +5,7 @@ import HomeScreen from "./home-screen/index"
 
 import ExploreScreen from "./explore-screen/index"
 import BookmarksScreen from "./bookmarks-screen"
-import ProfileScreen from "./profile-screen"
+
 import WhoToFollowListItem from "./who-to-follow-list/who-to-follow-list-item"
 import WhoToFollowList from "./who-to-follow-list/index.js"
 import TuitSummaryItem from "./tuit-summary-list/tuit-summary-item"
@@ -16,9 +16,9 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import tuitsReducer from "./reducers/tuits-reducer";
 
-import ProfileScreen from "./user/profile";
-import LoginScreen from "./user/login";
-//import RegisterScreen from "./user/register";
+import ProfileScreen from "./user/profile-screen";
+import LoginScreen from "./user/login-screen";
+import RegisterScreen from "./user/register-screen";
 import authReducer from "./reducers/auth-reducer";
 
 const store = configureStore (
