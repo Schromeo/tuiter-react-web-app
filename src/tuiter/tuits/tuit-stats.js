@@ -6,10 +6,10 @@ import { RiHeartFill, RiHeartLine } from "react-icons/ri"
 import { FiShare } from "react-icons/fi"
 import { updateTuitThunk } from "../services/tuits-thunks";
 import { useDispatch } from "react-redux";
-const dispatch = useDispatch();
+
 
 const TuitStats = ({replies,retuits,likes,liked}) => {
-
+    const dispatch = useDispatch();
     const [isLiked, setIsLiked] = useState(liked);
     const [likesCount, setLikesCount] = useState(likes);
 
@@ -39,8 +39,8 @@ const TuitStats = ({replies,retuits,likes,liked}) => {
                     <span className="ms-2">{retuits}</span>
                 </div>
                 <div className="col">
-                    {isLiked ? (<RiHeartFill color="red" onClick={() => dispatch(updateTuitThunk({ ...tuit, likes: tuit.likes + 1 }))} />) :
-                        (<RiHeartLine onClick={() => dispatch(updateTuitThunk({ ...tuit, likes: tuit.likes + 1 }))} />)}
+                    {isLiked ? (<RiHeartFill color="red" onClick={() => dispatch(updateTuitThunk({ likes: likesCount + 1 }))} />) :
+                        (<RiHeartLine onClick={() => dispatch(updateTuitThunk({ likes: likesCount + 1 }))} />)}
                     <span className="ms-2">{likesCount}</span>
                 </div>
                 <div className="col">

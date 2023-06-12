@@ -18,7 +18,7 @@ import tuitsReducer from "./reducers/tuits-reducer";
 
 import ProfileScreen from "./user/profile-screen";
 import LoginScreen from "./user/login-screen";
-//import RegisterScreen from "./user/register";
+import RegisterScreen from "./user/register-screen";
 import authReducer from "./reducers/auth-reducer";
 
 const store = configureStore (
