@@ -13,10 +13,6 @@ function ProfileScreen() {
             const { payload } = dispatch(profileThunk());
             setProfile(payload);
         }, []);
-
-//        function somefunc = async () => {
-//        ...
-//        }
     return (
         <div>
             <h1>Profile Screen</h1>

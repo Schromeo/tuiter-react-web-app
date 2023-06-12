@@ -11,21 +11,15 @@ import { useDispatch } from "react-redux";
 const TuitStats = ({ tuit }) => {
     const dispatch = useDispatch();
     const [isLiked, setIsLiked] = useState(tuit.liked);
-    const [likesCount, setLikesCount] = useState(tuit.likes);
 
     const handleLike = () => {
         if (isLiked){
-            setLikesCount(likesCount -1);
+            dispatch(updateTuitThunk({...tuit, likes: tuit.likes - 1 }))
         } else {
-            setLikesCount(likesCount +1);
+            dispatch(updateTuitThunk({...tuit, likes: tuit.likes + 1 }))
         }
         setIsLiked(!isLiked);
     };
-//<div className="col">
-//                    {isLiked ? (<RiHeartFill color="red" onClick={() => } />) :
-//                        (<RiHeartLine onClick={handleLike} />)}
-//                    <span className="ms-2">{likesCount}</span>
-//                </div>
 
     return (
         <div>
@@ -39,7 +33,7 @@ const TuitStats = ({ tuit }) => {
                     <span className="ms-2">{tuit.retuits}</span>
                 </div>
                 <div className="col">
-                    <RiHeartFill color={isLiked && "red"} onClick={() => {setIsLiked(!isLiked); dispatch(updateTuitThunk({...tuit, likes: likesCount + 1 }))}} />
+                    <RiHeartFill color={isLiked && "red"} onClick={() => {setIsLiked(!isLiked); }} />
                     <span className="ms-2">{tuit.likes}</span>
                 </div>
                 <div className="col">
