@@ -32,10 +32,7 @@ const TuitItem = ({tuit}) => {
                     <div>{tuit.tuit}</div>
                     <div>
                         <TuitStats
-                            replies={tuit.replies}
-                            retuits={tuit.retuits}
-                            likes={tuit.likes}
-                            liked={tuit.liked}
+                            tuit={tuit}
                         />
                     </div>
                 </div>
