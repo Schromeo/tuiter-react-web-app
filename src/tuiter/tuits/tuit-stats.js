@@ -33,7 +33,7 @@ const TuitStats = ({ tuit }) => {
                     <span className="ms-2">{tuit.retuits}</span>
                 </div>
                 <div className="col">
-                    <RiHeartFill color={isLiked && "red"} onClick={() => {setIsLiked(!isLiked); }} />
+                    <RiHeartFill color={isLiked && "red"} onClick={() => {handleLike()}} />
                     <span className="ms-2">{tuit.likes}</span>
                 </div>
                 <div className="col">
