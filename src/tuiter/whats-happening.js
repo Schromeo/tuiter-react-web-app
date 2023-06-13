@@ -43,8 +43,9 @@ const WhatsHappening = () => {
 
                 <div>
                     <button className="rounded-pill btn btn-primary float-end mt-2 ps-3 pe-3 fw-bold"
-                            onClick={tuitClickHandler}>
-                            Tuit
+                        onClick={tuitClickHandler}
+                    >
+                        Tuit
                     </button>
 
                     <div className="text-primary fs-2">
