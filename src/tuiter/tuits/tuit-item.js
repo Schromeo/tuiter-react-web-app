@@ -2,12 +2,10 @@ import React from "react";
 import {TbDiscountCheckFilled} from "react-icons/tb";
 import TuitStats from "./tuit-stats";
 import {useDispatch} from "react-redux";
-//import {deleteTuit} from "../reducers/tuits-reducer"
 import {deleteTuitThunk} from "../services/tuits-thunks"
 import {RxCross1} from "react-icons/rx"
 
 const TuitItem = ({tuit}) => {
-
     const dispatch = useDispatch();
     const deleteTuitHandler = (id) => {dispatch(deleteTuitThunk(id));}
     return(
@@ -23,10 +21,9 @@ const TuitItem = ({tuit}) => {
                         <span className="fw-bolder">{tuit.userName}</span>
                         <TbDiscountCheckFilled color="#0492C2" className="ms-2" size={21}/>
                         <span className=""> {tuit.handle} · {tuit.time} </span>
-                        <span className="float-end" onClick={() => deleteTuitHandler(tuit._id)}>
+                        <span className="float-end" onClick={() => deleteTuitHandler(tuit._id)} style={{cursor: 'pointer'}}>
                             <RxCross1/>
                         </span>
-
                     </div>
 
                     <div>{tuit.tuit}</div>
