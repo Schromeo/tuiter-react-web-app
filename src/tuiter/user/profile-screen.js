@@ -5,15 +5,26 @@ import { profileThunk, logoutThunk, updateUserThunk }
 from "../services/auth-thunks";
 function ProfileScreen() {
     const { currentUser } = useSelector((state) => state.user);
-    console.log("currentUser:", currentUser)
+    // console.log("currentUser:", currentUser)
     const [profile, setProfile] = useState(currentUser);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const save = () => { dispatch(updateUserThunk(profile)); };
+    const save = async() => { 
+        const user = await dispatch(updateUserThunk(profile));
+        console.log("updated user:", user);
+        if (user) {
+            alert("Profile updated successfully")
+        } else {
+            alert("Error updating profile");
+        }
+    };
     useEffect(() => {
-        const { payload } = dispatch(profileThunk());
-        console.log("payload:", payload)
-        setProfile(payload);
+        async function fetchData() {
+            const { payload } = await dispatch(profileThunk());
+            // console.log("payload:", payload)
+            setProfile(payload);
+        }
+        fetchData();
     }, []);
 
     return (
@@ -52,7 +63,7 @@ function ProfileScreen() {
             }}>
             Logout
         </button>
-        <button onClick={save}>Save </button>
+        <button onClick={save}>Save</button>
     </div>);
 }
 export default ProfileScreen;

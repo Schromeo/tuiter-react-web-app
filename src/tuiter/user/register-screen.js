@@ -6,14 +6,18 @@ import { registerThunk } from "../services/auth-thunks";
 function RegisterScreen() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleRegister = async () => {
     try {
-      dispatch(registerThunk({ username, password, email }));
-      navigate("/tuiter/login");
+      const user = await dispatch(registerThunk({ username, password }));
+      // console.log(user)
+      if (user.error) {
+        alert("User already exists")
+      } else {
+        navigate("/tuiter/login");
+      }
     } catch (e) {
       alert(e);
     }
@@ -38,15 +42,6 @@ function RegisterScreen() {
           type="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
-        />
-      </div>
-      <div className="mt-2">
-        <label>Email</label>
-        <input
-          className="form-control"
-          type="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
         />
       </div>
       <button className="btn btn-primary mt-2" onClick={handleRegister}>
