@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
-import { profileThunk, logoutThunk, updateUserThunk }
+import { useNavigate, useLocation } from "react-router";
+import { profileThunk, logoutThunk, updateUserThunk, getProfileThunk }
 from "../services/auth-thunks";
 function ProfileScreen() {
+    const location = useLocation();
+    const sentuser = location.state.user;
     const { currentUser } = useSelector((state) => state.user);
     // console.log("currentUser:", currentUser)
-    const [profile, setProfile] = useState(currentUser);
+    const [profile, setProfile] = useState(null);
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const save = async() => { 
-        const user = await dispatch(updateUserThunk(profile));
+    const save = async() => {
+        console.log("profile:", profile);
+        console.log("currentUser:", currentUser);
+        console.log("about to update user:", sentuser.username, firstName, lastName)
+        const user = await dispatch(updateUserThunk({ username: sentuser.username, firstName, lastName }));
         console.log("updated user:", user);
         if (user) {
             alert("Profile updated successfully")
@@ -19,51 +26,45 @@ function ProfileScreen() {
         }
     };
     useEffect(() => {
-        async function fetchData() {
-            const { payload } = await dispatch(profileThunk());
-            // console.log("payload:", payload)
-            setProfile(payload);
+        console.log("user is logged in:", currentUser)
+        if (currentUser) {
+            async function fetchData() {
+                await dispatch(getProfileThunk(currentUser.username)).then((user) => {
+                    console.log("user from getProfileThunk:", user)
+                    setProfile({...user, username: currentUser.username});
+                })
+            }
+            fetchData();
         }
-        fetchData();
     }, []);
 
     return (
     <div>
         <h1>Profile Screen</h1>
-        {profile && (
+        {sentuser && (
             <div>
                 <div>
                     <label>First Name</label>
-                    <input type="text" value={profile.firstName}
-                        onChange={(event) => {
-                            const newProfile = {
-                                ...profile, firstName: event.target.value,
-                            };
-                            setProfile(newProfile);
-                        }}
+                    <input type="text" value={firstName}
+                        onChange={(event) => setFirstName(event.target.value)}
                     />
                 </div>
                 <div>
                     <label>Last Name</label>
-                    <input type="text" value={profile.lastName}
-                        onChange={(event) => {
-                            const newProfile = {
-                                ...profile, lastName: event.target.value,
-                            };
-                            setProfile(newProfile);
-                        }}
+                    <input type="text" value={lastName}
+                        onChange={(event) => setLastName(event.target.value)}
                     />
                 </div>
-            </div>
-        )}
-        <button
-            onClick={() => {
-                dispatch(logoutThunk());
-                navigate("/login");
-            }}>
-            Logout
-        </button>
-        <button onClick={save}>Save</button>
+            <button
+                onClick={() => {
+                    dispatch(logoutThunk());
+                    navigate("/login");
+                }}>
+                Logout
+            </button>
+            <button onClick={save}>Save</button>
+        </div>
+    )}
     </div>);
 }
 export default ProfileScreen;
