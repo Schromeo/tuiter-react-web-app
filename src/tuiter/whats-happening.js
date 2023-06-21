@@ -9,7 +9,8 @@ import { TbCalendarStats } from 'react-icons/tb';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { BiBold, BiItalic } from 'react-icons/bi';
 
-import {createTuit} from "./reducers/tuits-reducer";
+//import {createTuit} from "./reducers/tuits-reducer";
+import {createTuitThunk} from "./services/tuits-thunks";
 import {deleteTuit} from "./reducers/tuits-reducer";
 
 import {useDispatch} from "react-redux";
@@ -20,9 +21,13 @@ const WhatsHappening = () => {
     const tuitClickHandler = () => {
 
         const newTuit = {
-            tuit: whatsHappening
+            tuit: whatsHappening,
+            image: 'nasa.png',
+            handle: '@nasa',
+            userName: 'NASA',
+            time: '0s'
         }
-        dispatch(createTuit(newTuit));
+        dispatch(createTuitThunk(newTuit));
         setWhatsHappening("");
 
     }
@@ -42,8 +47,9 @@ const WhatsHappening = () => {
 
                 <div>
                     <button className="rounded-pill btn btn-primary float-end mt-2 ps-3 pe-3 fw-bold"
-                            onClick={tuitClickHandler}>
-                            Tuit
+                        onClick={tuitClickHandler}
+                    >
+                        Tuit
                     </button>
 
                     <div className="text-primary fs-2">
